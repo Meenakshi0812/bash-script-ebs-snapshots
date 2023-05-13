@@ -1,21 +1,25 @@
 #!/bin/bash
 
-# Load instance IDs from ebsapp.yaml
-instances=($(yq eval '.instances[].ec2_instance_id' ebsapp.yaml))
+# Read from ebsapp.yaml
 
- # Loop through instances and create snapshots of their EBS volumes
-for instance in "${instances[@]}"
+while IFS= read -r line; do
 
-do
+  ec2_instance_id=$(echo $line | awk '{print $2}')
 
-  volumes=($(aws ec2 describe-volumes --filters Name=attachment.instance-id,Values=$instance --query 'Volumes[].VolumeId' --output text))
+  name=$(echo $line | awk '{print $4}')
 
-   for volume in "${volumes[@]}"
+  # Get a list of EBS volumes attached to the EC2 instance
 
-  do
+  volume_ids=$(aws ec2 describe-volumes --filters Name=attachment.instance-id,Values=$ec2_instance_id --query 'Volumes[*].VolumeId' --output text)
 
-    aws ec2 create-snapshot --volume-id $volume --description "Snapshot of EBS volume $volume on instance $instance"
+  # Create a snapshot for each EBS volume
+
+  for volume_id in $volume_ids; do
+
+    snapshot_description="$name-$(date +%Y%m%d%H%M%S)"
+
+    aws ec2 create-snapshot --volume-id $volume_id --description "$snapshot_description"
 
   done
 
-done
+done < ebsapp.yaml

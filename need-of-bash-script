@@ -1,0 +1,17 @@
+# bash-script-ebs-snapshots
+- A shell script or bash script is a computer program written in the Bash programming language, which is a popular Unix shell that is used on Linux, macOS, and other Unix-based systems. 
+- Shell scripts are typically used for automating tasks, such as system administration, file management, software installation, and data processing.
+
+## There are several reasons why we need shell scripts:
+
+**Automation**: Shell scripts enable us to automate repetitive tasks, such as backups, system maintenance, and software installations, which can save time and reduce the risk of errors.
+
+**Efficiency**: By using shell scripts, we can perform complex tasks quickly and easily, without having to type in multiple commands.
+
+**Customization**: Shell scripts can be customized to suit specific needs, and can be easily modified and adapted as requirements change.
+
+**Scripting**: Shell scripts are a powerful scripting tool that can be used to create complex workflows and processes, such as data processing, data analysis, and data visualization.
+
+**Integration**: Shell scripts can be integrated with other tools and applications, such as databases, web servers, and messaging systems, to create a comprehensive solution.
+
+ shell scripts are a powerful tool for automating tasks, increasing efficiency, and improving productivity, making them an essential tool for system administrators and developers.
