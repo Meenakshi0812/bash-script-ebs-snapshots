@@ -4,3 +4,4 @@ instances:
   - name: example-2
     ec2_instance_id: i-0f0037a35286ccc7d
     
+
