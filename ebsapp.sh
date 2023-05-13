@@ -14,3 +14,4 @@ while IFS= read -r line; do
     aws ec2 create-snapshot --volume-id $volume_id --description "$snapshot_description"
   done
 done < ebsapp.yaml
+
