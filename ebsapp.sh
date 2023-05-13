@@ -15,3 +15,4 @@ while IFS= read -r line; do
   done
 done < ebsapp.yaml
 
+
