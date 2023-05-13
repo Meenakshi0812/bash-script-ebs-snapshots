@@ -3,5 +3,3 @@ instances:
     ec2_instance_id: i-0b841a41aa32ea9cc
   - name: backend-app
     ec2_instance_id: i-0ccf7521e7a047791
-
-  
