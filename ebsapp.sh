@@ -10,9 +10,7 @@ while IFS= read -r line; do
 
   # Create a snapshot for each EBS volume
   for volume_id in $volume_ids; do
-    snapshot_description="$name-$   )"
+    snapshot_description="$name-$volume_id-$(date +%Y-%m-%d-%H-%M-%S)"
     aws ec2 create-snapshot --volume-id $volume_id --description "$snapshot_description"
   done
 done < ebsapp.yaml
-
-

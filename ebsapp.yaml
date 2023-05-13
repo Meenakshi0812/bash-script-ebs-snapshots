@@ -1,7 +1,5 @@
 instances:
-  - name: test-1
+  - name: frontend-app
     ec2_instance_id: i-0891ed71bab2749cd
-  - name: example-2
+  - name: backend-app
     ec2_instance_id: i-0f0037a35286ccc7d
-
-    
